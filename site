@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+             <style>
+            .textcontainer {
+                border: 2px solid lightblue;
+            }
+        </style>
+       
+    </head>
+    <body>
+        <div>
+        <div class="textcontainer" id="textcontainer1"></div>
+        <div class="textcontainer" id="textcontainer2"></div>
+        <script>
+            // Text definieren
+            var thetext = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr,\n\
+             sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,\n\
+              sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.\n\
+               Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n\
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,\n\
+                 sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,\n\
+                  sed diam voluptua.';
+            // Funktion definieren
+            function nl2br(str, is_xhtml) {
+                if (typeof str === 'undefined' || str === null) {
+                    return '';
+                }
+                var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
+                return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+            }
+            // Funktion aufrufen, um den Text umzuwandeln
+            var newtext = nl2br(thetext);
+            // Originalen und umgewandelten Text ausgeben
+            document.getElementById("textcontainer1").innerHTML = thetext;
+            document.getElementById("textcontainer2").innerHTML = newtext;
+        </script>
+
+</div>
+    </body>
+</html>
+
